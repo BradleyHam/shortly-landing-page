@@ -1,0 +1,151 @@
+.statistics{
+
+    background: $gray;
+    padding: 8rem 0;
+    position: relative;
+    &__shorten-box{
+       position: absolute;
+       top:0;
+       left: 50%;
+       transform: translate(-50%, -50%);
+        @include center;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: no-repeat center/cover url('../images/bg-shorten-desktop.svg'), $darkViolet;
+        border-radius: 10px;
+    }
+    form{
+        width: 90%;
+        display: flex
+    }
+    input{
+        flex: 7;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-right: 1rem;
+        outline: none;
+        border: none;
+    }
+    button{
+        @include button;
+        flex: 1;
+        padding: 2rem 4rem; 
+        border-radius: 10px;
+    }
+    &__heading{
+        width: 40%;
+        margin: 0 auto;
+        padding: 10rem 0;
+    }
+    &__title, &__text{
+        text-align: center
+    }
+    &__title{
+        font-size: 3rem;
+    }
+    &__text{
+        opacity: .5;
+    }
+
+    &__card-container{
+        @include center;
+        display: flex;
+        height: 400px;
+        position: relative;
+      
+        &::before{
+            content: '';
+            height: 10px;
+            width: 80%;
+            background: $cyan;
+            position: absolute;
+            top: 50%;
+            left: 20px;  
+        }
+    }
+    &__card{
+        background: white;
+        flex:1;
+        margin: 1rem;
+        position: relative;
+        padding: 5rem 3rem 5rem 3rem;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(0,0,0,.11);
+    }
+    &__card--recognition{
+        align-self: flex-start;
+    }
+    &__card--records{
+        align-self: center;
+    }
+    &__card--customizable{
+        align-self: flex-end;
+    }
+    &__card-icon{
+        transform: translateY(-50%);
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        background: $darkViolet;
+        height: 7rem;
+        width: 7rem;
+        border-radius: 50%;
+    }
+    &__card-title{
+        padding: 1.2rem 0;
+    }
+    &__card-text{
+        font-size: 1.6rem;
+        opacity: .5;
+    }
+  
+}
+
+@media(max-width: 800px){
+    .statistics{
+    &__shorten-box{
+        width: 90%;
+    }
+      form{
+        flex-flow: column;
+    }
+    input,button{
+        width: 100%;
+        margin: 1rem 0;
+
+    }
+    &__heading{
+        width: 90%;
+    }
+    &__card-container{
+    
+        flex-flow: column;
+        height: initial;
+        &::before{
+            content: '';
+            height: 80%;
+            width: 10px;
+            background: $cyan;
+            position: absolute;
+            left: 50%;
+            top: 20px;
+         
+        }
+    }
+    &__card{
+        margin: 5rem 0;
+        text-align: center;
+    }
+    &__card-icon{
+        
+        left: 50%;
+        transform: translate(-50%,-50%);
+       
+    }
+    }
+}

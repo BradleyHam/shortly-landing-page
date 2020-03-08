@@ -1,0 +1,145 @@
+
+@mixin hamburger-psudo{
+    content: '';
+    height: 3px;
+    width: 100%;
+   background: $grayishViolet;
+    position: absolute;
+    border-radius: 20px;
+
+    @content;
+}
+.mobile__nav{
+    display:none;
+}
+
+.nav{
+    height: 80px;
+    position: fixed;
+    top:0;
+    left: 0 ;
+    right: 0;
+    background: white;
+    z-index: 10;
+}
+.nav__container{
+    @include center;
+    display: flex;
+   
+}
+.nav__ul, 
+.nav__sign-in__area{  
+      display: flex;
+      align-items: center;
+      @media(max-width: 805px){
+        display:none 
+    }
+    }
+ .nav__ul{
+      margin-right: auto;
+}
+.nav__li, .nav__log-in, 
+.nav__logo{
+    margin-right: $navSpacing;
+}
+.nav__logo{
+    height: 50%;
+    margin: auto 0;
+    margin-right: $navSpacing;
+    @media(max-width: 805px){
+        margin-right: auto;
+    }
+}
+.nav__sign-up{
+    @include button;
+}
+
+
+@media(max-width: 805px){
+ .nav__hamburger{
+    margin: auto 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &__line{
+        height: 3px;
+        background: $grayishViolet;
+    
+        width: 80%;
+        position: relative;
+        border-radius: 20px;
+    }
+    &__line::before{
+        @include hamburger-psudo{
+            top: -10px;
+        }
+    }
+    &__line::after{
+        @include hamburger-psudo{
+             top: 10px;
+            }
+    }
+}
+.nav__hamburger.active .nav__hamburger__line{
+    visibility: hidden;
+    &::after{
+        visibility: visible;
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    &::before{
+        visibility: visible;
+        top: 0;
+        transform: rotate(45deg);
+    }
+}
+}
+
+.mobile__nav{
+    @include center;
+    text-align: center;
+    background: $darkViolet;
+    color: white;
+    height: initial;
+    border-radius: 2rem;
+    padding: 2rem;
+    font-weight: bold;
+    animation: 1s ease;
+    &__ul{
+        padding-bottom: 2rem;
+    }
+    &__li{
+        padding: 1rem;
+    }
+    &__log-in{
+        padding-bottom: 3rem;
+    }
+    &__sign-in__area{
+        padding: 3rem;
+        border-top: 1px solid rgba(128, 128, 128, 0.192);
+    }
+    &__sign-up{
+        @include button;
+        width: 90%;
+    }
+
+}
+.mobile__nav.active{
+    @media(max-width: 805px){
+        display:block;
+    }
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+$cyan: hsl(180, 66%, 49%);
+$darkViolet: hsl(257, 27%, 26%);
+$red: hsl(0, 87%, 67%);
+$gray: hsl(229, 100%, 98%);
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+$containerWidth: 80%;
+$navSpacing: 3rem;
+
+@mixin center{
+    width: $containerWidth;
+    height: 100%;
+    margin: auto auto;
+    @media(max-width: 800px){
+        width: 90%;
+    }
+}
+
+@mixin button{
+    padding: 1rem 2rem;
+    color: white;
+    background: $cyan;
+    cursor: pointer;
+    border: none;
+    border-radius: 5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    outline: none;
+}
+html{
+    font-size: 10px;
+}
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 1.8rem;
+    font-family: "Poppins";
+    color: rgb(60, 63, 63);
+    line-height: 1.6;
+}
+

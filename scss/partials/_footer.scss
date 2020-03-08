@@ -1,0 +1,49 @@
+.footer{
+    background: $veryDarkViolet;
+    color: white;
+   
+    &__container{
+        @include center;
+        display: flex;
+        padding: 10rem 0;
+    }
+  
+    h6{
+        font-size: 1.8rem;
+    }
+    ul{
+        list-style-type: none;
+    }
+    li{
+        opacity: .7;
+        font-size: 1.6rem;
+    }
+    a{
+     text-decoration: none;
+     color: white;
+    }
+    i{
+        padding: 0 .4rem;
+        font-size: 2.12rem;
+    }
+    &-col{
+        padding: 0 3rem;
+    }
+
+    &__icon{flex:3;}
+    &__features{flex:1;}
+    &__resources{flex:1;}
+    &__company{flex:1;}
+    &__icons{flex:2;}
+}
+@media(max-width: 800px){
+    .footer{
+        text-align:center;
+        &__container{
+            flex-flow: column;
+        }
+        &__container > div{
+            padding: 1rem 0;
+        }
+    }
+}

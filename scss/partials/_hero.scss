@@ -1,0 +1,64 @@
+header{
+    width: 100vw;
+    overflow: hidden;
+}
+
+.hero{
+    @include center;
+    padding-top: 80px;
+    display: flex;
+    padding: 14rem 0 18rem;
+   
+    &__h1{
+        font-size: 7rem;
+        line-height: 1.1;
+    }
+    &__text{
+        padding-right: 14rem;
+        opacity: .7;
+    }
+    &__text-side{
+        margin: auto;
+        padding:0 3rem 0 0;
+    }
+     &__image-side{
+        margin-right: -250px;  
+    }
+    &__button{
+        @include button;    
+        margin-top: 2rem;
+        padding: 1.5rem 5rem;
+    }
+  
+    }
+
+    @media(max-width: 1000px){
+    
+        .hero{
+            flex-flow: column;
+            padding: 10rem 0 20rem;
+
+  
+         &__image-side{
+            order: -1;
+            margin-right: -350px;  
+        }
+        img{
+            width: 80%;
+        }
+        &__text-side{
+            text-align: center;
+            padding: 4rem 0 0 0;;
+        }
+        &__text{
+            padding-right: 0;
+            opacity: .7;
+            font-size: 1.6rem;
+        }
+        &__h1{
+            font-size: 4rem;
+            line-height: 1.1;
+        }
+    }
+}
+    
